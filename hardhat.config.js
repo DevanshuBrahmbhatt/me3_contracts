@@ -5,6 +5,7 @@ require("@nomiclabs/hardhat-solhint");
 require("hardhat-gas-reporter");
 require('hardhat-deploy');
 require("@nomiclabs/hardhat-ethers");
+require("@nomiclabs/hardhat-ganache");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -20,37 +21,37 @@ task("accounts", "Prints the list of accounts", async () => {
 // Go to https://hardhat.org/config/ to learn more
 
 // TLD to use in deployment
-const TLD = 'forever';
+const TLD = 'me3';
 
 // Go to https://www.infura.io
-const INFURA_API_KEY = 'INFURA PROJECT ID';
+const INFURA_API_KEY = '1acf5bea24b146fbac017be79917b5af';
 
 // Replace this private key with your account private key
 // To export your private key from Metamask, open Metamask and
 // go to Account Details > Export Private Key
-const PRIVATE_KEY = '';
+const PRIVATE_KEY ='4a935e6074dbc3b6f06a3ee2ffae92d43432824d322467cdf4651ae476e4faf7';
 
 // using ChainLink USD Oracle on Mainnet or set null to use DummyOracle
 // https://data.chain.link/ethereum/mainnet/crypto-usd/eth-usd
 const MAINNET_USD_ORACLE = '0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419';
 
 const accountKey = (PRIVATE_KEY === '' ? '0x00' : '0x' + PRIVATE_KEY);
-
+console.log("Devanshu account key" + accountKey);
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
   tld: TLD,
   networks: {
-    mainnet: {
-      url: "https://mainnet.infura.io/v3/" + INFURA_API_KEY,
-      usdOracle: MAINNET_USD_ORACLE,
-      accounts: [ accountKey ],
-      tags: ["production"]
-    },
+    // mainnet: {
+    //   url: "https://mainnet.infura.io/v3/" + INFURA_API_KEY,
+    //   usdOracle: MAINNET_USD_ORACLE,
+    //   accounts: [ accountKey ],
+    //   tags: ["production"]
+    // },
     ropsten: {
       url: "https://ropsten.infura.io/v3/" + INFURA_API_KEY,
-      accounts: [ accountKey ],
+      accounts: [accountKey],
       usdOracle: '0xa92F3BE2dFf40c82b902Ffa82e50B1db414bC7E1',
       tags: ["staging"]
     },

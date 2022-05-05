@@ -56,11 +56,11 @@ async function main() {
     await registrar.setResolver(resolver.address);
 
     // Optional for later setting ReverseRegistrar and ENSRegistry owners to burn address
-    // console.log('Setting .reverse owner to burn address');
-    // await ens.setSubnodeOwner(ZERO, web3.utils.sha3('reverse'), EMPTY_ADDRESS);
-    //
-    // console.log('Setting registry owner to burn address')
-    // await ens.setOwner(ZERO, EMPTY_ADDRESS);
+    console.log('Setting .reverse owner to burn address');
+    await ens.setSubnodeOwner(ZERO, web3.utils.sha3('reverse'), EMPTY_ADDRESS);
+    
+    console.log('Setting registry owner to burn address')
+    await ens.setOwner(ZERO, EMPTY_ADDRESS);
 
     console.log('Done!');
 }

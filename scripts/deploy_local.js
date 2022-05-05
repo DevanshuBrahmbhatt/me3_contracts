@@ -16,7 +16,7 @@ async function main() {
     // manually to make sure everything is compiled
     // await hre.run('compile');
     const ZERO = '0x0000000000000000000000000000000000000000000000000000000000000000';
-    const TLD = 'forever';
+    const TLD = 'me3';
 
     // Deploying ENS
     const ENSContract = await hre.ethers.getContractFactory('ENSRegistry');
